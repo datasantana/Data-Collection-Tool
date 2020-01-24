@@ -1,15 +1,12 @@
 ---
-title: Licencia de Software del BID
-spdx-id: licencia
-nickname: licencia
-source: 
-lang: es
+Title: Licencia de Software del BID
+Spdx-id: licencia
+Nickname: licencia
+Source: 
+Lang: es
 
 ---
 
-| Licencia de software del BID   |  Source       | Lang    |
-| ------------- -----------------|:-------------:| -----:  |
-|           AM-331-A3            |               | Español |
 
 ## AM-331-A3 Licencia de Software 
 Effective: April 2018
