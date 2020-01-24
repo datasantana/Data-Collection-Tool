@@ -99,3 +99,5 @@ Esta Licencia sólo podrá ser modificada mediante autorización previa, expresa
 
 ### 21.  Acuerdo Final
 Esta Licencia constituye el acuerdo final entre las Partes y reemplaza todas las comunicaciones, entendimientos o acuerdos, escritos o verbales, de carácter previo entre las Partes con relación al objeto de esta Licencia. 
+
+<style> .ocultar_breadcrumb_ingles { display:none; } .ocultar_home_ingles{ display:none; } </style>
