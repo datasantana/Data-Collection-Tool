@@ -28,11 +28,11 @@ Entre estos se evidencia una relación clara que, al final, define la macroestru
 ### Patrón de arquitectura
 ---
 
-Lo anterior, describe un patrón de arquitectura n-tier o de capas. Una arquitectura de capas es un estilo de arquitectura cliente-servidor con claras delimitaciones entre la lógica de presentación, la lógica de dominio o aplicación y la lógica de los datos. En otras palabras, es un estilo de arquitectura distribuida donde cada capa funciona de manera independiente y donde la comunicación entre estas se da de forma vertical, a través de las capas intermedias. También existen ejemplos de sistemas de capas desplegados de forma monolítica, por lo que este patrón tiene altas prestaciones de modularidad y flexibilidad2. 
+Lo anterior, describe un patrón de arquitectura n-tier o de capas. Una arquitectura de capas es un estilo de arquitectura cliente-servidor con claras delimitaciones entre la lógica de presentación, la lógica de dominio o aplicación y la lógica de los datos. En otras palabras, es un estilo de arquitectura distribuida donde cada capa funciona de manera independiente y donde la comunicación entre estas se da de forma vertical, a través de las capas intermedias. También existen ejemplos de sistemas de capas desplegados de forma monolítica, por lo que este patrón tiene altas prestaciones de modularidad y flexibilidad. 
 
 Las aplicaciones WEB-GIS también son grandes ejemplos de arquitecturas distribuidas por capas debido a que este estilo ha permitido el desarrollo independiente de soluciones a nivel de base de datos con tecnologías como PostgreSQL y PostGIS, a nivel de dominio con Programación Orientada a Objetos y el aprovechamiento de PostGIS como caja de herramientas de geoprocesos en la creación de microservicios web o APIs, y el aprovechamiento de estos servicios web a través de protocolos de mapas web como WMS, WFS y GeoJSON a través de librerías y frameworks interoperables. 
 
-![Modelo de Arquitectura General de la Aplicación](https://github.com/geo-studio/OMI/blob/master/frontend/src/assets/app.jpg)
+![Modelo de Arquitectura General de la Aplicación](https://github.com/geo-studio/Data-Collection-Tool/blob/master/frontend/src/assets/app.jpg)
 
 #### Componentes Backend
 
@@ -47,7 +47,7 @@ Dentro de los controladores de métodos que gestionan la creación de proyectos 
 * Controladores de métodos 
 * Socket de servicios de controladores 
 
-![Modelo de Microservicios usado para el backend](https://github.com/geo-studio/OMI/blob/master/frontend/src/assets/backend.jpg)
+![Modelo de Microservicios usado para el backend](https://github.com/geo-studio/Data-Collection-Tool/blob/master/frontend/src/assets/backend.jpg)
 
 #### Componentes Frontend
 
@@ -68,7 +68,7 @@ Dentro de los componentes principales de este modelo se encuentran:
 * Formulario
 * Conector de Servicios de Mapas Web 
 
-![Modelo Flux usado para el frontend](https://github.com/geo-studio/OMI/blob/master/frontend/src/assets/frontend.jpg)
+![Modelo Flux usado para el frontend](https://github.com/geo-studio/Data-Collection-Tool/blob/master/frontend/src/assets/frontend.jpg)
 
 
 ### Instalación
@@ -77,7 +77,7 @@ Dentro de los componentes principales de este modelo se encuentran:
 Clonar repositorio
 
 ```bash
-$ git clone https://github.com/geo-studio/OMI.git
+$ git clone https://github.com/geo-studio/Data-Collection-Tool.git
 ```
 
 ### Configuración de servidor web
