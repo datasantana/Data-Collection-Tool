@@ -94,6 +94,6 @@ $ npm -v
 
 ## LICENCIA
 
-<a href="https://github.com/geo-studio/CADI/blob/master/LICENSE.md"> GNU General Public Licence v3.0 </a>
+<a href="https://github.com/geo-studio/CADI/blob/master/LICENSE.md"> Licencia de Software del BID AM-331-A3 </a>
 
 
