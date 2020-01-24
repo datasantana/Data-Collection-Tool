@@ -94,6 +94,6 @@ $ npm -v
 
 ## LICENCIA
 
-<a href="https://github.com/geo-studio/OMI/blob/master/LICENSE"> GNU General Public Licence v3.0 </a>
+<a href="https://github.com/geo-studio/CADI/blob/master/LICENSE"> GNU General Public Licence v3.0 </a>
 
 
