@@ -1,4 +1,4 @@
-# CADI
+# Data Collection Tool
 Proyecto de implementación de una tecnología de código abierto para la captura de información inmobiliaria en el marco de la implementación de los Observatorios Municipales Inmobiliarios - OMI
 
 - [Arquitectura de software](#arquitectura-de-software---modelo-físico)
@@ -94,6 +94,6 @@ $ npm -v
 
 ## LICENCIA
 
-<a href="https://github.com/geo-studio/CADI/blob/master/LICENSE.md"> Licencia de Software del BID AM-331-A3 </a>
+<a href="https://github.com/geo-studio/Data-Collection-Tool/blob/master/LICENSE.md"> Licencia de Software del BID AM-331-A3 </a>
 
 
