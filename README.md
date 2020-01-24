@@ -1,5 +1,8 @@
-# Data Collection Tool
-Proyecto de implementación de una tecnología de código abierto para la captura de información inmobiliaria en el marco de la implementación de los Observatorios Municipales Inmobiliarios - OMI
+## Data Collection Tool
+
+Proyecto de implementación de una tecnología de código abierto para la captura de información inmobiliaria .
+
+*Esta herramienta digital forma parte del catálogo de herramientas del **Banco Interamericano de Desarrollo** [code.iadb.org](code.iadb.org)*.
 
 - [Arquitectura de software](#arquitectura-de-software---modelo-físico)
 - [Patrón de Arquitectura](#patrón-de-arquitectura)
@@ -8,7 +11,7 @@ Proyecto de implementación de una tecnología de código abierto para la captur
 - [Instalación](#instalación)
 - [Licencia](#licencia)
 
-## ARQUITECTURA DE SOFTWARE - MODELO FÍSICO
+### Arquitectura de software - Modelo Físico
 
 El presente capítulo describe, de forma gráfica y documental, las decisiones de diseño y arquitectura tomadas en el proceso de desarrollo del aplicativo descrito y especificado en los documentos MODELO CONCEPTUAL y MODELO LÓGICO, correspondientes a los productos 1 y 3 de la consultoría. A partir del modelamiento de la lógica de negocio (requerimientos funcionales) y la definición de los atributos de calidad (requerimientos no funcionales), se establece un proceso iterativo que busca la solución rápida de los problemas esenciales más prioritarios dentro del sistema o aplicativo:
 
@@ -22,7 +25,7 @@ Entre estos se evidencia una relación clara que, al final, define la macroestru
 
 3. Una interfaz de usuario que disponga de todas las funcionalidades pertinentes en función a las operaciones programadas desde el controlador 
 
-## PATRÓN DE ARQUITECTURA
+### Patrón de arquitectura
 
 Lo anterior, describe un patrón de arquitectura n-tier o de capas. Una arquitectura de capas es un estilo de arquitectura cliente-servidor con claras delimitaciones entre la lógica de presentación, la lógica de dominio o aplicación y la lógica de los datos. En otras palabras, es un estilo de arquitectura distribuida donde cada capa funciona de manera independiente y donde la comunicación entre estas se da de forma vertical, a través de las capas intermedias. También existen ejemplos de sistemas de capas desplegados de forma monolítica, por lo que este patrón tiene altas prestaciones de modularidad y flexibilidad2. 
 
@@ -30,7 +33,7 @@ Las aplicaciones WEB-GIS también son grandes ejemplos de arquitecturas distribu
 
 ![Modelo de Arquitectura General de la Aplicación](https://github.com/geo-studio/OMI/blob/master/frontend/src/assets/app.jpg)
 
-### COMPONENTES BACKEND
+#### Componentes Backend
 El backend está compuesto por las capas de dominio y datos, las cuales en conjunto configuran un modelo de arquitectura orientado a microservicios. A modo de Middleware, el dominio consiste en una APIREST, que permite exponer microservicios controlados por métodos que reciben peticiones HTTP, la cuales son traducidas a sentencias SQL que entran en comunicación de manera asíncrona con la capa de datos, para luego emitir respuestas o resultados de consultas transformados en objetos de tipo JSON para finalmente ser transmitidos por el mismo canal HTTP por el que se realizó la petición inicial. 
 
 Dentro de las principales características de la APIREST se encuentra el control de autenticación, cuya respuesta es un objeto que contiene una API-KEY privada por cada usuario o sesión. Esta, es almacenada en el lado del cliente (caché). También cabe resaltar que los controladores gestionan, principalmente, el esquema de Metadatos dentro de la Base de datos, puesto que, a partir de este se reconstruyen los objetos que ofrece la API como respuesta o servicio en cada petición. 
@@ -44,7 +47,7 @@ Dentro de los controladores de métodos que gestionan la creación de proyectos 
 
 ![Modelo de Microservicios usado para el backend](https://github.com/geo-studio/OMI/blob/master/frontend/src/assets/backend.jpg)
 
-### COMPONENTES FRONTEND
+#### Componentes Frontend
 
 El frontend corresponde a la aplicación WEB-GIS cliente o a la interfaz de usuario correspondiente a esta. El aplicativo está basado en el modelo FLUX, una variación del Modelo-Vista-Controlador que consiste en la centralización de la información y de las mutaciones que la modifiquen. A partir de dichos estados se renderizan distintos componentes de la interfaz de usuario, desde donde se despliegan las distintas funcionalidades o acciones, las cuales despacharán acciones sobre las mutaciones y transformarán de forma dinámica el estado dependiente de algún otro componente3. 
 
@@ -66,7 +69,7 @@ Dentro de los componentes principales de este modelo se encuentran:
 ![Modelo Flux usado para el frontend](https://github.com/geo-studio/OMI/blob/master/frontend/src/assets/frontend.jpg)
 
 
-## INSTALACIÓN
+### Instalación
 
 Clonar repositorio
 
@@ -74,7 +77,7 @@ Clonar repositorio
 $ git clone https://github.com/geo-studio/OMI.git
 ```
 
-## CONFIGURACIÓN DE SERVIDOR WEB
+### Configuración de servidor web
 
 * Descarga e instalacion de Node.js
 
@@ -92,7 +95,7 @@ Luego de la descarga e instalación de node.js por medio de la consola verficamo
 $ npm -v
  ```
 
-## LICENCIA
+### Licencia
 
 <a href="https://github.com/geo-studio/Data-Collection-Tool/blob/master/LICENSE.md"> Licencia de Software del BID AM-331-A3 </a>
 
