@@ -1,10 +1,9 @@
 ---
 Title: Licencia de Software del BID
-Spdx-id: licencia
-Nickname: licencia
+Spdx-id: Licencia
+Nickname: Licencia
 Source: 
-Lang: es
-
+Lang: Es
 ---
 
 

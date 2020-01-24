@@ -1,0 +1,17 @@
+[
+  {
+    "id": 0,
+    "email": "adriana.martinez@geostudio.com.co",
+    "password": "123456"
+  },
+  {
+    "id": 1,
+    "email": "juan.linares@geostudio.com.co",
+    "password": "2468"
+  },
+  {
+    "id": 2,
+    "email": "paola.luna@geostudio.com.co",
+    "password": "13579"
+  }
+]
