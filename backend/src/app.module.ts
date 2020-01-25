@@ -9,7 +9,7 @@ import { DataTypeModule } from './modules/data-type.module';
 import { UserModule } from './modules/user.module';
 import { FormModule } from './modules/form.module';
 import { FieldModule } from './modules/field.module';
-import { SeveDataModule } from './modules/save-data.module';
+import { SaveDataModule } from './modules/save-data.module';
 
 @Module({
   imports: [
@@ -18,7 +18,7 @@ import { SeveDataModule } from './modules/save-data.module';
     FormModule,
     FieldModule,
     DataTypeModule,
-    SeveDataModule,
+    SaveDataModule,
   ],
   controllers: [],
   providers: [

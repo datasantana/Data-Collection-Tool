@@ -2,7 +2,7 @@
 
 Proyecto de implementación de una tecnología de código abierto para la captura de información inmobiliaria.
 
-**Nota:** *Esta herramienta digital forma parte del catálogo de herramientas del **Banco Interamericano de Desarrollo** [code.iadb.org/es](code.iadb.org/es)*.
+**Nota:** *Esta herramienta digital forma parte del catálogo de herramientas del **Banco Interamericano de Desarrollo** [code.iadb.org/](code.iadb.org/)*
 
 ## Contenido
 
@@ -107,6 +107,6 @@ Acceda a la memoria técnica del proyecto y consulte la sección <a href="https:
 ### Licencia
 ---
 
-Licencia de Software del BID <a href="https://github.com/geo-studio/Data-Collection-Tool/blob/master/LICENCE.md"> AM-331-A3 </a>
+Licencia de Software del BID <a href=https://github.com/geo-studio/Data-Collection-Tool/blob/master/LICENSE.md> AM-331-A3 </a>
 
 

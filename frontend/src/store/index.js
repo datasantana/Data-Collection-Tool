@@ -301,7 +301,6 @@ export default new Vuex.Store({
       })
     },
     deleteProject({commit}, idProject) {
-      console.log(commit)
       return new Promise((resolve, reject) => {
         axios({
           url: `http://localhost:3000/forms/${idProject}`,
@@ -320,7 +319,6 @@ export default new Vuex.Store({
       })
     },
     addField({ commit }, fieldBody) {
-      console.log(commit)
       return new Promise((resolve, reject) => {
         axios({
           url: `http://localhost:3000/fields/${fieldBody.formId}/${fieldBody.datatypeId}`,
@@ -344,7 +342,6 @@ export default new Vuex.Store({
       })
     },
     deleteField({commit}, item) {
-      console.log(commit)
       return new Promise((resolve, reject) => {
         axios({
           url: `http://localhost:3000/fields/${item}`,

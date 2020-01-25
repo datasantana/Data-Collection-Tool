@@ -10,4 +10,4 @@ import { SaveDataService } from '../services/save-data.service';
         SaveDataService,
     ],
 })
-export class SeveDataModule {}
+export class SaveDataModule {}

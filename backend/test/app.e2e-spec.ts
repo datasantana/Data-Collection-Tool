@@ -1,23 +1,31 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import * as request from 'supertest';
-import { AppModule } from './../src/app.module';
+import { SaveDataModule } from './../src/modules/save-data.module';
+import { SaveDataService } from './../src/services/save-data.service';
+import { INestApplication } from '@nestjs/common';
 
-describe('AppController (e2e)', () => {
-  let app;
+describe('saveDataController (e2e)', () => {
+  let app: INestApplication;
+  let saveDataService = { findAll: () => ['test'] };
 
   beforeEach(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
-      imports: [AppModule],
-    }).compile();
+      imports: [SaveDataModule],
+    })
+    .overrideProvider(SaveDataService)
+    .useValue(saveDataService)
+    .compile();
 
     app = moduleFixture.createNestApplication();
     await app.init();
   });
 
-  it('/ (GET)', () => {
+  it('/GET savedata/20', () => {
     return request(app.getHttpServer())
-      .get('/')
+      .get('/savedata/20')
       .expect(200)
-      .expect('Hello World!');
+      .expect({
+        data: saveDataService.findAll(),
   });
+});
 });
