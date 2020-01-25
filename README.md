@@ -102,7 +102,7 @@ Luego de la descarga e instalación de node.js por medio de la consola verficamo
 $ npm -v
  ```
 
-Acceda a la <a href="https://github.com/geo-studio/Data-Collection-Tool/blob/master/backend/resources/scriptdb.sql">documentación</a> para conocer la configuración del backend y frontend para su despliegue.
+Acceda a la <a href="https://github.com/geo-studio/Data-Collection-Tool/blob/master/backend/resources/Memoria_Tecnica.pdf">documentación</a> para conocer la configuración del backend y frontend para su despliegue.
 
 ### Licencia
 ---
