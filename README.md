@@ -101,9 +101,11 @@ Luego de la descarga e instalación de node.js por medio de la consola verficamo
 $ npm -v
  ```
 
+Acceda a la <a href="https://github.com/geo-studio/Data-Collection-Tool/blob/master/backend/resources/scriptde.sql">documentación</a> para conocer la configuración del backend y frontend para su despliegue.
+
 ### Licencia
 ---
 
-<a href="https://github.com/geo-studio/Data-Collection-Tool/blob/master/LICENSE.md"> Licencia de Software del BID AM-331-A3 </a>
+<a href="https://github.com/geo-studio/Data-Collection-Tool/blob/master/"> Licencia de Software del BID AM-331-A3 </a>
 
 
