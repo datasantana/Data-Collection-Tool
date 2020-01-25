@@ -1,7 +1,8 @@
 ## Data Collection Tool
 
-Proyecto de implementación de una tecnología de código abierto para la captura de información inmobiliaria
-*esta herramienta digital forma parte del catálogo de herramientas del **Banco Interamericano de Desarrollo** [code.iadb.org](code.iadb.org)*.
+Proyecto de implementación de una tecnología de código abierto para la captura de información inmobiliaria.
+
+**Nota:** *Esta herramienta digital forma parte del catálogo de herramientas del **Banco Interamericano de Desarrollo** [code.iadb.org](code.iadb.org)*.
 
 ## Contenido
 
