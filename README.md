@@ -35,7 +35,7 @@ Lo anterior, describe un patrón de arquitectura n-tier o de capas. Una arquitec
 
 Las aplicaciones WEB-GIS también son grandes ejemplos de arquitecturas distribuidas por capas debido a que este estilo ha permitido el desarrollo independiente de soluciones a nivel de base de datos con tecnologías como PostgreSQL y PostGIS, a nivel de dominio con Programación Orientada a Objetos y el aprovechamiento de PostGIS como caja de herramientas de geoprocesos en la creación de microservicios web o APIs, y el aprovechamiento de estos servicios web a través de protocolos de mapas web como WMS, WFS y GeoJSON a través de librerías y frameworks interoperables. 
 
-![Modelo de Arquitectura General de la Aplicación](https://github.com/geo-studio/Data-Collection-Tool/blob/master/frontend/src/assets/app.jpg)
+![Modelo de Arquitectura General de la Aplicación](https://github.com/geo-studio/Data-Collection-Tool/blob/master/frontend/src/assets/app.png)
 
 #### Componentes Backend
 
@@ -50,7 +50,7 @@ Dentro de los controladores de métodos que gestionan la creación de proyectos 
 * Controladores de métodos 
 * Socket de servicios de controladores 
 
-![Modelo de Microservicios usado para el backend](https://github.com/geo-studio/Data-Collection-Tool/blob/master/frontend/src/assets/backend.jpg)
+![Modelo de Microservicios usado para el backend](https://github.com/geo-studio/Data-Collection-Tool/blob/master/frontend/src/assets/backend.png)
 
 #### Componentes Frontend
 
@@ -71,7 +71,7 @@ Dentro de los componentes principales de este modelo se encuentran:
 * Formulario
 * Conector de Servicios de Mapas Web 
 
-![Modelo Flux usado para el frontend](https://github.com/geo-studio/Data-Collection-Tool/blob/master/frontend/src/assets/frontend.jpg)
+![Modelo Flux usado para el frontend](https://github.com/geo-studio/Data-Collection-Tool/blob/master/frontend/src/assets/frontend.png)
 
 
 ### Instalación
