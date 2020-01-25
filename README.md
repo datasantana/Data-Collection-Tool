@@ -106,6 +106,6 @@ Acceda a la <a href="https://github.com/geo-studio/Data-Collection-Tool/blob/mas
 ### Licencia
 ---
 
-<a href="https://github.com/geo-studio/Data-Collection-Tool/blob/master/"> Licencia de Software del BID AM-331-A3 </a>
+Licencia de Software del BID <a href="https://github.com/geo-studio/Data-Collection-Tool/blob/master/"> AM-331-A3 </a>
 
 
