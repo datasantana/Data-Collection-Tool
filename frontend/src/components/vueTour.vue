@@ -24,7 +24,7 @@ export default {
       steps: [
         {
         target: "#v-step-0", // We're using document.querySelector() under the hood
-        content: `"Inicie <strong>Tour</strong> para conocer el panel de navegación del aplicativo o consulte la <a href="/about" rel="noopener">Guía de usuario</a> disponible en la sección de ayuda"`
+        content: `Inicie <strong>Tour</strong> para conocer el panel de navegación del aplicativo o consulte la <a href="/about" rel="noopener">Guía de usuario</a> disponible en la sección de ayuda`
         },
         {
         target: ".v-step-1",
@@ -65,7 +65,7 @@ export default {
         },
         {
           target: "#v-step-6",
-          content: `"Consulte la <a href="/about" rel="noopener">Guía de usuario</a> disponible en la sección de Ayuda"`,
+          content: `Consulte la <a href="/about" rel="noopener">Guía de usuario</a> disponible en la sección de Ayuda`,
           params: {
           highlight: false
           } 
