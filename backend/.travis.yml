@@ -1,4 +1,4 @@
 language: node_js
 node_js:
   - 'stable'
-install: backend/package.json
+install: ./backend/package.json
