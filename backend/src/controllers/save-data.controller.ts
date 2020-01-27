@@ -41,6 +41,7 @@ export class SaveDataController {
   }
 
   @Get(':tableName')
+  @UseGuards(new AuthGuard())
   show(@Param('tableName') tableName: any) {
     return this.service.show(tableName);
   }
