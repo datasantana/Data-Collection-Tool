@@ -4,6 +4,8 @@ Proyecto de implementación de una tecnología de código abierto para la captur
 
 **Nota:** *Esta herramienta digital forma parte del catálogo de herramientas del **Banco Interamericano de Desarrollo** <a href=https://code.iadb.org> code.iadb.org/ </a>*
 
+[![Build Status](https://travis-ci.com/geo-studio/Data-Collection-Tool.svg?branch=master)](https://travis-ci.com/geo-studio/Data-Collection-Tool)
+
 ## Contenido
 
 - [Arquitectura de software](#arquitectura-de-software---modelo-físico)
