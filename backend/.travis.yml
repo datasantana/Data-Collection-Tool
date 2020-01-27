@@ -1,5 +1,4 @@
 language: node_js
 node_js:
   - 'stable'
-before script: cd backend
-install: npm install
+install: "./backend/package.json"
