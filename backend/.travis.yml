@@ -1,4 +1,4 @@
 language: node_js
 node_js:
   - 'stable'
-install: cd backend && npm install
+script: cd backend && npm install
