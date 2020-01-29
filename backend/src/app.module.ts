@@ -10,6 +10,8 @@ import { UserModule } from './modules/user.module';
 import { FormModule } from './modules/form.module';
 import { FieldModule } from './modules/field.module';
 import { SaveDataModule } from './modules/save-data.module';
+import { AppController } from './app.controller';  
+import { AppService } from './app.service'; 
 
 @Module({
   imports: [
@@ -20,10 +22,11 @@ import { SaveDataModule } from './modules/save-data.module';
     DataTypeModule,
     SaveDataModule,
   ],
-  controllers: [],
-  providers: [
+  controllers: [AppController],
+  providers: [AppService,
     { provide: APP_FILTER, useClass: HttpErrorFilter },
     { provide: APP_INTERCEPTOR, useClass: LoggingInterceptor },
+    
   ],
 })
 export class AppModule {}
