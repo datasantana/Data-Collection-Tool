@@ -111,4 +111,10 @@ Acceda a la memoria técnica del proyecto y consulte la sección <a href="https:
 
 Licencia de Software del BID <a href=https://github.com/geo-studio/Data-Collection-Tool/blob/master/LICENSE.md> AM-331-A3 </a>
 
+## Autores ✒️
+---
+_Equipo técnico de GEO Studio_
 
+* **Juan David Linares** - *Desarrollo Frontend*
+* **Adriana Martínez** - *Desarrollo Backend*
+* **Oscar Corredor** - *Arquitectura del Software*
