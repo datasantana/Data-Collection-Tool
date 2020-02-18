@@ -113,7 +113,7 @@ Licencia de Software del BID <a href=https://github.com/geo-studio/Data-Collecti
 
 ### Autores 
 ---
-_Equipo técnico de GEO Studio_<a href=https://geostudio.com.co>geostudio.com.co</a>*
+_Equipo técnico de GEO Studio_ *<a href=https://geostudio.com.co>geostudio.com.co</a>*
 
 * **Juan David Linares** - *Desarrollo Frontend*
 * **Adriana Martínez** - *Desarrollo Backend*
