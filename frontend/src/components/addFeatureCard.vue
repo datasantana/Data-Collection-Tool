@@ -89,7 +89,7 @@ export default {
         .dispatch("insertFeature", {tableName: tableName, ...fullForm, ...point})
       await this.$store
         .dispatch("loadLayer", { tableName: tableName })
-        .catch(err => console.log(err))
+        .catch(err => err);
     }
   }
 };

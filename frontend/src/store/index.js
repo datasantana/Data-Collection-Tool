@@ -18,7 +18,7 @@ export default new Vuex.Store({
       timeout: 5000,
       multiline: true
     },
-    signup:{},
+    signup: {},
     fieldTypes: [],
     dialog: false,
     wmsDialog: false,
@@ -36,7 +36,7 @@ export default new Vuex.Store({
     wmsUrl: "",
     wmsLayer: "",
     wmsName: "",
-    wmsAttributions:""
+    wmsAttributions: ""
   },
   mutations: {
     auth_request(state) {
@@ -68,77 +68,87 @@ export default new Vuex.Store({
       state.status = "";
       state.token = "";
     },
-    uSignup( state, {signup}) {
-      state.signup = signup
+    uSignup(state, { signup }) {
+      state.signup = signup;
     },
     listFieldTypes(state, dataTypesAction) {
-      state.fieldTypes = dataTypesAction
+      state.fieldTypes = dataTypesAction;
     },
     listProjects(state, projectsAction) {
       state.projects = projectsAction;
     },
     addLayer(state, nLayer) {
-      if(!state.selectedLayers.find(current => current.tableName == nLayer.tableName)){
-        state.selectedLayers = [...state.selectedLayers, nLayer]
+      if (
+        !state.selectedLayers.find(
+          current => current.tableName == nLayer.tableName
+        )
+      ) {
+        state.selectedLayers = [...state.selectedLayers, nLayer];
       } else {
-        state.selectedLayers = state.selectedLayers.filter(current => current.tableName !== nLayer.tableName)
-        state.selectedLayers = [...state.selectedLayers, nLayer]
+        state.selectedLayers = state.selectedLayers.filter(
+          current => current.tableName !== nLayer.tableName
+        );
+        state.selectedLayers = [...state.selectedLayers, nLayer];
       }
     },
     removeLayer(state, tableName) {
-      state.selectedLayers = state.selectedLayers.filter(current => current.tableName !== tableName)
+      state.selectedLayers = state.selectedLayers.filter(
+        current => current.tableName !== tableName
+      );
     },
     uProject(state, { body }) {
-      state.body = body
+      state.body = body;
     },
     listFields(state, pFields) {
-      state.fields = pFields
+      state.fields = pFields;
     },
     clearFieldList(state) {
-      state.fields = []
+      state.fields = [];
     },
     switchDialogOn(state, selectedFeatures) {
-      state.dialog = true
+      state.dialog = true;
       state.formObject = selectedFeatures.map(geometry => {
-        return geometry.geometry
-      })
+        return geometry.geometry;
+      });
     },
     switchDialogOff(state) {
-      state.dialog = false
+      state.dialog = false;
     },
     switchWmsDialogOn(state) {
-      state.wmsDialog = true
+      state.wmsDialog = true;
     },
     switchWmsDialogOff(state) {
-      state.wmsDialog = false
+      state.wmsDialog = false;
     },
     switchDownloadDialogOn(state) {
-      state.downloadDialod = true
+      state.downloadDialod = true;
     },
     switchDownloadDialogOff(state) {
-      state.downloadDialod = false
+      state.downloadDialod = false;
     },
-    switchDeleteDialogOn(state, projectId ) {
-      state.deleteDialog = true
-      state.toDelete = { ...projectId }
+    switchDeleteDialogOn(state, projectId) {
+      state.deleteDialog = true;
+      state.toDelete = { ...projectId };
     },
     switchDeleteDialogOff(state) {
-      state.deleteDialog = false
+      state.deleteDialog = false;
     },
     layerFields(state, editableProject) {
-      state.formFeatures = state.selectedLayers.find(selected => selected.id === editableProject)
+      state.formFeatures = state.selectedLayers.find(
+        selected => selected.id === editableProject
+      );
     },
     WMS(state, wmsParams) {
-      state.wmsUrl = wmsParams.url.toString()
-      state.wmsLayer = wmsParams.layer
-      state.wmsName = wmsParams.name
+      state.wmsUrl = wmsParams.url.toString();
+      state.wmsLayer = wmsParams.layer;
+      state.wmsName = wmsParams.name;
       state.wmsAttributions = wmsParams.attr;
     },
     wmsSwhitchOn(state) {
-      state.wmsVisible = true
+      state.wmsVisible = true;
     },
     wmsSwhitchOff(state) {
-      state.wmsVisible = false
+      state.wmsVisible = false;
     }
   },
   getters: {
@@ -150,7 +160,7 @@ export default new Vuex.Store({
       return new Promise((resolve, reject) => {
         commit("auth_request");
         axios({
-          url: "http://localhost:3000/auth",
+          url: `https://us-central1-bid-datacollector-v1apirest.cloudfunctions.net/api/auth`,
           data: user,
           method: "POST"
         })
@@ -165,9 +175,10 @@ export default new Vuex.Store({
           })
           .catch(err => {
             commit("auth_error");
-            commit ("alert", {
+            commit("alert", {
               color: "#455A64",
-              text: "Usuario o contraseña incorrectos. Verifique sus credenciales o contacte al administrador "
+              text:
+                "Usuario o contraseña incorrectos. Verifique sus credenciales o contacte al administrador"
             });
             localStorage.removeItem("token");
             reject(err);
@@ -186,32 +197,34 @@ export default new Vuex.Store({
     register({ commit }, signup) {
       return new Promise((resolve, reject) => {
         axios({
-          url: "http://localhost:3000/auth/signup",
+          url: `https://us-central1-bid-datacollector-v1apirest.cloudfunctions.net/api/auth/signup`,
           data: signup,
           method: "POST"
         })
-        .then(resp => {
-          const signup = resp.data;
-          commit("uSignup", { signup })
-          commit ("alert", {
-            color: "#006064",
-            text: "Usuario creado con éxito. Ingresa tus credenciales para acceder a la aplicación "
+          .then(resp => {
+            const signup = resp.data;
+            commit("uSignup", { signup });
+            commit("alert", {
+              color: "#006064",
+              text:
+                "Usuario creado con éxito. Ingresa tus credenciales para acceder a la aplicación"
+            });
+            resolve(resp);
           })
-          resolve(resp)
-          })
-        .catch(err=> {
-          commit ("alert", {
-            color: "#455A64",
-            text: "Este usuario ya existe. Registra un nuevo usuario o contacta al administrador para recordar tu contraseña "
-          })
-          reject(err);
-        })
-      })
+          .catch(err => {
+            commit("alert", {
+              color: "#455A64",
+              text:
+                "Este usuario ya existe. Registra un nuevo usuario o contacta al administrador para recordar tu contraseña "
+            });
+            reject(err);
+          });
+      });
     },
     getFieldTypes({ commit }) {
       return new Promise((resolve, reject) => {
         axios({
-          url: "http://localhost:3000/dataTypes",
+          url: `https://us-central1-bid-datacollector-v1apirest.cloudfunctions.net/api/datatypes`,
           method: "GET"
         })
           .then(resp => {
@@ -227,7 +240,7 @@ export default new Vuex.Store({
     getProjects({ commit, state }) {
       return new Promise((resolve, reject) => {
         axios({
-          url: `http://localhost:3000/forms/user/${state.user.id}`,
+          url: `https://us-central1-bid-datacollector-v1apirest.cloudfunctions.net/api/forms/user/${state.user.id}`,
           method: "GET"
         })
           .then(resp => {
@@ -241,11 +254,11 @@ export default new Vuex.Store({
           });
       });
     },
-    loadLayer({ commit, state }, {tableName}) {
+    loadLayer({ commit, state }, { tableName }) {
       // obtener features
       return new Promise((resolve, reject) => {
         axios({
-          url: `http://localhost:3000/savedata/${tableName}`,
+          url: `https://us-central1-bid-datacollector-v1apirest.cloudfunctions.net/api/savedata/${tableName}`,
           method: "GET"
         })
           .then(resp => {
@@ -254,20 +267,25 @@ export default new Vuex.Store({
               let nFeature = {
                 ...feature
               };
-              nFeature.geometry = {type:"Point", coordinates: [feature.longitude, feature.latitude]};
+              nFeature.geometry = {
+                type: "Point",
+                coordinates: [feature.longitude, feature.latitude]
+              };
               nFeature.type = "Feature";
-              nFeature.properties = feature, {};
+              (nFeature.properties = feature), {};
               delete nFeature.latitude;
               delete nFeature.longitude;
               delete feature.geometry;
               return nFeature;
-            })
+            });
             // sacar objeto proyecto
-            const project = state.projects.find(project => project.tableName === tableName);
-            if(project) {
+            const project = state.projects.find(
+              project => project.tableName === tableName
+            );
+            if (project) {
               const nLayer = {
                 ...project,
-                features: features,
+                features: features
               };
               commit("addLayer", nLayer);
             }
@@ -281,125 +299,126 @@ export default new Vuex.Store({
     createProject({ commit }, body) {
       return new Promise((resolve, reject) => {
         axios({
-          url: "http://localhost:3000/forms",
+          url: `https://us-central1-bid-datacollector-v1apirest.cloudfunctions.net/api/forms`,
           data: body,
           method: "POST"
         })
-         .then(resp => {
-           const body = resp.data;
-           commit("uProject", { body })
-           commit ("alert", {
-            color: "#006064",
-            text: "Agrega campos al proyecto",
-            timeout: 2000
+          .then(resp => {
+            const body = resp.data;
+            commit("uProject", { body });
+            commit("alert", {
+              color: "#006064",
+              text: "Agrega campos al proyecto",
+              timeout: 2000
+            });
+            resolve(resp);
           })
-           resolve(resp);
-         })
-         .catch(err => {
-           reject(err);
-         })
-      })
+          .catch(err => {
+            reject(err);
+          });
+      });
     },
-    deleteProject({commit}, idProject) {
+    deleteProject({ commit }, idProject) {
       return new Promise((resolve, reject) => {
         axios({
-          url: `http://localhost:3000/forms/${idProject}`,
+          url: `https://us-central1-bid-datacollector-v1apirest.cloudfunctions.net/api/forms/${idProject}`,
           method: "DELETE"
         })
           .then(resp => {
-            commit ("alert", {
+            commit("alert", {
               color: "#006064",
               text: "El proyecto ha sido eliminado"
-            })
-            resolve(resp)
+            });
+            resolve(resp);
           })
           .catch(err => {
-            reject(err)
-          })
-      })
+            reject(err);
+          });
+      });
     },
     addField({ commit }, fieldBody) {
       return new Promise((resolve, reject) => {
         axios({
-          url: `http://localhost:3000/fields/${fieldBody.formId}/${fieldBody.datatypeId}`,
+          url: `https://us-central1-bid-datacollector-v1apirest.cloudfunctions.net/api/fields/${fieldBody.formId}/${fieldBody.datatypeId}`,
           data: fieldBody,
           method: "POST"
         })
-         .then(resp => {
-          commit ("alert", {
-            color: "#006064",
-            text: "Se ha agregado un nuevo campo a tu proyecto"
+          .then(resp => {
+            commit("alert", {
+              color: "#006064",
+              text: "Se ha agregado un nuevo campo a tu proyecto"
+            });
+            resolve(resp);
           })
-           resolve(resp)
-         })
-         .catch(err => {
-          commit ("alert", {
-            color: "#455A64",
-            text: "Nombre de campo requerido o ya existe "
-          })
-           reject(err)
-         })
-      })
+          .catch(err => {
+            commit("alert", {
+              color: "#455A64",
+              text: "Nombre de campo requerido o ya existe "
+            });
+            reject(err);
+          });
+      });
     },
-    deleteField({commit}, item) {
+    deleteField({ commit }, item) {
       return new Promise((resolve, reject) => {
         axios({
-          url: `http://localhost:3000/fields/${item}`,
+          url: `https://us-central1-bid-datacollector-v1apirest.cloudfunctions.net/api/fields/${item}`,
           method: "DELETE"
         })
           .then(resp => {
-            commit ("alert", {
+            commit("alert", {
               color: "#006064",
               text: "El campo ha sido eliminado"
-            })
-            resolve(resp)
+            });
+            resolve(resp);
           })
           .catch(err => {
-            reject(err)
-          })
-      })
+            reject(err);
+          });
+      });
     },
     getFields({ commit }, bodyId) {
       return new Promise((resolve, reject) => {
         axios({
-          url: `http://localhost:3000/fields/forms/${bodyId}`,
+          url: `https://us-central1-bid-datacollector-v1apirest.cloudfunctions.net/api/fields/forms/${bodyId}`,
           method: "GET"
         })
-         .then(resp => {
-           let fields = resp.data;
-           commit("listFields", fields);
-           resolve(resp);
-         })
-         .catch(err => {
-           reject(err);
-         });
+          .then(resp => {
+            let fields = resp.data;
+            commit("listFields", fields);
+            resolve(resp);
+          })
+          .catch(err => {
+            reject(err);
+          });
       });
     },
-    insertFeature( { commit }, bodyFeature) {
+    insertFeature({ commit }, bodyFeature) {
       commit("insert_exit");
       return new Promise((resolve, reject) => {
         axios({
-          url: "http://localhost:3000/savedata/",
+          url: `https://us-central1-bid-datacollector-v1apirest.cloudfunctions.net/api/savedata/`,
           data: bodyFeature,
           method: "POST"
         })
           .then(resp => {
-            commit ("alert", {
+            commit("alert", {
               color: "#006064",
               text: "La información capturada ha sido registrada exitósamente"
-            })
-            resolve(resp)
+            });
+            resolve(resp);
           })
           .catch(err => {
-            reject(err)
-          })
-      })
+            reject(err);
+          });
+      });
     },
-    addWMS({commit}, wmsParams) {
-      commit("WMS", wmsParams)
-      commit ("alert", {
+    addWMS({ commit }, wmsParams) {
+      commit("WMS", wmsParams);
+      commit("alert", {
         color: "#006064",
-        text: "El WMS ha sido cargado. Active el boton de visualización en el menú capa wms"
+        text:
+          "El WMS ha sido cargado. Active el boton de visualización en el menú capa wms"
       });
     }
   },

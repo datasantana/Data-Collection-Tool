@@ -74,7 +74,7 @@ export default {
       this.$store
         .dispatch("register", {email, password})
         .then(() => this.$router.push("/login"))
-        .catch(err => console.log(err));
+        .catch(err => (err));
     },
   validate () {
       if (this.$refs.formRegister.validate()) {
