@@ -160,7 +160,7 @@ export default new Vuex.Store({
       return new Promise((resolve, reject) => {
         commit("auth_request");
         axios({
-          url: `https://us-central1-bid-datacollector-v1apirest.cloudfunctions.net/api/auth`,
+          url: `http://181.48.228.226:3000/auth`,
           data: user,
           method: "POST"
         })
@@ -197,7 +197,7 @@ export default new Vuex.Store({
     register({ commit }, signup) {
       return new Promise((resolve, reject) => {
         axios({
-          url: `https://us-central1-bid-datacollector-v1apirest.cloudfunctions.net/api/auth/signup`,
+          url: `http://181.48.228.226:3000/auth/signup`,
           data: signup,
           method: "POST"
         })
@@ -224,7 +224,7 @@ export default new Vuex.Store({
     getFieldTypes({ commit }) {
       return new Promise((resolve, reject) => {
         axios({
-          url: `https://us-central1-bid-datacollector-v1apirest.cloudfunctions.net/api/datatypes`,
+          url: `http://181.48.228.226:3000/datatypes`,
           method: "GET"
         })
           .then(resp => {
@@ -240,7 +240,7 @@ export default new Vuex.Store({
     getProjects({ commit, state }) {
       return new Promise((resolve, reject) => {
         axios({
-          url: `https://us-central1-bid-datacollector-v1apirest.cloudfunctions.net/api/forms/user/${state.user.id}`,
+          url: `http://181.48.228.226:3000/forms/user/${state.user.id}`,
           method: "GET"
         })
           .then(resp => {
@@ -258,7 +258,7 @@ export default new Vuex.Store({
       // obtener features
       return new Promise((resolve, reject) => {
         axios({
-          url: `https://us-central1-bid-datacollector-v1apirest.cloudfunctions.net/api/savedata/${tableName}`,
+          url: `http://181.48.228.226:3000/savedata/${tableName}`,
           method: "GET"
         })
           .then(resp => {
@@ -299,7 +299,7 @@ export default new Vuex.Store({
     createProject({ commit }, body) {
       return new Promise((resolve, reject) => {
         axios({
-          url: `https://us-central1-bid-datacollector-v1apirest.cloudfunctions.net/api/forms`,
+          url: `http://181.48.228.226:3000/forms`,
           data: body,
           method: "POST"
         })
@@ -321,7 +321,7 @@ export default new Vuex.Store({
     deleteProject({ commit }, idProject) {
       return new Promise((resolve, reject) => {
         axios({
-          url: `https://us-central1-bid-datacollector-v1apirest.cloudfunctions.net/api/forms/${idProject}`,
+          url: `http://181.48.228.226:3000/forms/${idProject}`,
           method: "DELETE"
         })
           .then(resp => {
@@ -339,7 +339,7 @@ export default new Vuex.Store({
     addField({ commit }, fieldBody) {
       return new Promise((resolve, reject) => {
         axios({
-          url: `https://us-central1-bid-datacollector-v1apirest.cloudfunctions.net/api/fields/${fieldBody.formId}/${fieldBody.datatypeId}`,
+          url: `http://181.48.228.226:3000/fields/${fieldBody.formId}/${fieldBody.datatypeId}`,
           data: fieldBody,
           method: "POST"
         })
@@ -362,7 +362,7 @@ export default new Vuex.Store({
     deleteField({ commit }, item) {
       return new Promise((resolve, reject) => {
         axios({
-          url: `https://us-central1-bid-datacollector-v1apirest.cloudfunctions.net/api/fields/${item}`,
+          url: `http://181.48.228.226:3000/fields/${item}`,
           method: "DELETE"
         })
           .then(resp => {
@@ -380,7 +380,7 @@ export default new Vuex.Store({
     getFields({ commit }, bodyId) {
       return new Promise((resolve, reject) => {
         axios({
-          url: `https://us-central1-bid-datacollector-v1apirest.cloudfunctions.net/api/fields/forms/${bodyId}`,
+          url: `http://181.48.228.226:3000/fields/forms/${bodyId}`,
           method: "GET"
         })
           .then(resp => {
@@ -397,7 +397,7 @@ export default new Vuex.Store({
       commit("insert_exit");
       return new Promise((resolve, reject) => {
         axios({
-          url: `https://us-central1-bid-datacollector-v1apirest.cloudfunctions.net/api/savedata/`,
+          url: `http://181.48.228.226:3000/savedata/`,
           data: bodyFeature,
           method: "POST"
         })

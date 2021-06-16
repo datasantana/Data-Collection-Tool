@@ -26,17 +26,16 @@
           ></v-text-field>
           <v-divider></v-divider>
           <v-card-actions>
-            <v-btn 
-              class="white--text" 
-              color="blue-grey darken-3" 
-              @click="switchDialogOff"
-            >Cancelar</v-btn>
+            <v-btn class="white--text" color="#3e4e59" @click="switchDialogOff"
+              >Cancelar</v-btn
+            >
             <v-spacer></v-spacer>
-            <v-btn 
-              class="white--text" 
+            <v-btn
+              class="white--text"
               color="grey darken-3"
               @click="insertFeature(), switchDialogOff()"
-            >Guardar</v-btn>
+              >Guardar</v-btn
+            >
           </v-card-actions>
         </v-form>
       </v-card-text>
@@ -45,52 +44,63 @@
 </template>
 
 <script>
-import { mapState, mapMutations, mapActions } from "vuex"
+import { mapState, mapMutations, mapActions } from "vuex";
 
 export default {
   name: "add-feature-card",
   data() {
     return {
       rules: {
-        required: value => !!value || "Campo requerido",
+        required: (value) => !!value || "Campo requerido",
       },
       editableProject: 0,
-      formBody: {}
+      formBody: {},
     };
   },
   computed: {
-    ...mapState(["dialog", "selectedLayers", "fields", "formFeatures", "formObject"])
+    ...mapState([
+      "dialog",
+      "selectedLayers",
+      "fields",
+      "formFeatures",
+      "formObject",
+    ]),
   },
   methods: {
     ...mapMutations(["switchDialogOff", "layerFields"]),
     ...mapActions(["loadLayer"]),
     getForm() {
       const selectedProject = this.selectedLayers.find(
-        thisProject => thisProject.name === this.selectedLayers.name
+        (thisProject) => thisProject.name === this.selectedLayers.name
       );
-      this.form = selectedProject
+      this.form = selectedProject;
     },
     clearFormBody() {
-      this.formBody = {}
+      this.formBody = {};
     },
     async insertFeature() {
-      let tableName = this.formFeatures.tableName
-      let point = this.formObject.map(geom=> {
-        return {geometry: geom.coordinates.toString()}
-      }).reduce((obj) => {
-        return {
-          ...obj
-        }
-      })
-      let fullForm = this.formBody
+      let tableName = this.formFeatures.tableName;
+      let point = this.formObject
+        .map((geom) => {
+          return { geometry: geom.coordinates.toString() };
+        })
+        .reduce((obj) => {
+          return {
+            ...obj,
+          };
+        });
+      let fullForm = this.formBody;
       //let bodyFeature = {tableName: tableName, ...fullForm, ...point}
       //console.log(bodyFeature)
-      await this.$store
-        .dispatch("insertFeature", {tableName: tableName, ...fullForm, ...point})
+      await this.$store.dispatch("insertFeature", {
+        tableName: tableName,
+        ...fullForm,
+        ...point,
+      });
       await this.$store
         .dispatch("loadLayer", { tableName: tableName })
-        .catch(err => err);
-    }
-  }
+        .catch((err) => err);
+    },
+  },
 };
 </script>
